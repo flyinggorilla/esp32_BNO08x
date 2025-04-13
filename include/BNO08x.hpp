@@ -55,7 +55,8 @@ class BNO08x
         bool dynamic_calibration_clear();
         bool dynamic_calibration_run_routine(); 
 
-        bool get_frs(uint16_t frs_ID, uint32_t (&data)[16], uint16_t& rx_data_sz);
+        bool get_frs(BNO08xFrsID frs_ID, uint32_t (&data)[16], uint16_t& rx_data_sz);
+        bool write_frs(BNO08xFrsID frs_ID, uint32_t *data, const uint16_t tx_data_sz);
         sh2_ProductIds_t get_product_IDs();
 
         bool data_available();
